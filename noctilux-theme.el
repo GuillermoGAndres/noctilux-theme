@@ -220,7 +220,7 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
               (fmt-redwave `(:underline (:color ,red :style wave) :inherit default))
               (fmt-orangewave `(:underline (:color ,orange :style wave) :inherit default)))
           `((;; basic
-             (default ((t (,@fg-base0 ,@bg-back)))) ; Normal
+             (default ((t (,@fg-base0 ,@bg-back,@fmt-bold)))) ; Normal
              (cursor ((t (,@fg-base03 ,@bg-white)))) ; Cursor
              (error ((t (,@fmt-bold ,@fg-red)))) ; Error
              (escape-glyph-face ((t (,@fg-red))))
@@ -319,40 +319,40 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (eshell-ls-unreadable ((t (,@fg-base00))))
              (eshell-prompt ((t (,@fmt-bold ,@fg-green))))
              ;; font-lock
-             (font-lock-builtin-face ((t (,@fmt-none ,@fg-green)))) ; Statement
+             (font-lock-builtin-face ((t (,@fg-green)))) ; Statement
              (font-lock-comment-face ((t (,@fmt-ital ,@fg-base01)))) ; Comment
-             (font-lock-constant-face ((t (,@fmt-none ,@fg-violet)))) ; Constant
+             (font-lock-constant-face ((t (,@fg-violet)))) ; Constant
              (font-lock-function-name-face ; Identifier
-              ((t (,@fmt-none ,@fg-blue))))
-             (font-lock-keyword-face ((t (,@fmt-none ,@fg-green)))) ; Statement
-             (font-lock-string-face ((t (,@fmt-none ,@fg-cyan)))) ; Constant
-             (font-lock-type-face ((t (,@fmt-none ,@fg-yellow)))) ; Type
+              ((t (,@fg-blue))))
+             (font-lock-keyword-face ((t (,@fg-green)))) ; Statement
+             (font-lock-string-face ((t (,@fg-cyan)))) ; String
+             (font-lock-type-face ((t (,@fg-yellow)))) ; Type
              (font-lock-variable-name-face ; Identifier
-              ((t (,@fmt-none ,@fg-blue))))
+              ((t (,@fg-blue))))
              (font-lock-warning-face ((t (,@fmt-bold ,@fg-red)))) ; Error
              (font-lock-doc-face ((t (,@fmt-ital ,@fg-base01)))) ; Comment
              (font-lock-doc-string-face  ; Comment (XEmacs-only)
               ((t (,@fmt-ital ,@fg-base01))))
-             (font-lock-color-constant-face ((t (,@fmt-none ,@fg-green))))
+             (font-lock-color-constant-face ((t (,@fg-green))))
              (font-lock-comment-delimiter-face ; Comment
               ((t (,@fmt-ital ,@fg-base01))))
              (font-lock-preprocessor-face ; PreProc
-              ((t (,@fmt-none ,@fg-orange))))
-             (font-lock-reference-face ((t (,@fmt-none ,@fg-cyan))))
-             (font-lock-negation-char-face ((t (,@fmt-none ,@fg-red))))
+              ((t (,@fg-orange))))
+             (font-lock-reference-face ((t (,@fg-cyan))))
+             (font-lock-negation-char-face ((t (,@fg-red))))
              (font-lock-other-type-face ((t (,@fmt-ital ,@fg-blue))))
              (font-lock-regexp-grouping-construct
-              ((t (,@fmt-none ,@fg-orange))))
+              ((t (,@fg-orange))))
              (font-lock-special-keyword-face ; Special
-              ((t (,@fmt-none ,@fg-red))))
-             (font-lock-exit-face ((t (,@fmt-none ,@fg-red))))
+              ((t (,@fg-red))))
+             (font-lock-exit-face ((t (,@fg-red))))
              (font-lock-other-emphasized-face ((t (,@fmt-bldi ,@fg-violet))))
              (font-lock-regexp-grouping-backslash
-              ((t (,@fmt-none ,@fg-yellow))))
+              ((t (,@fg-yellow))))
              ;; helm
              (helm-M-x-key ((t (,@fg-violet))))
              (helm-buffer-directory ((t (,@fmt-bold ,@fg-yellow))))
-             (helm-buffer-file ((t (,@fmt-none ,@fg-base0))))
+             (helm-buffer-file ((t (,@fg-base0))))
              (helm-buffer-not-saved ((t (,@fmt-undr ,@fg-red))))
              (helm-buffer-process ((t (,@fg-blue))))
              (helm-buffer-saved-out ((t (,@fg-cyan))))
@@ -362,7 +362,7 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (helm-ff-directory ((t (,@fmt-bold ,@fg-yellow))))
              (helm-ff-dotted-directory ((t (,@fg-red))))
              (helm-ff-executable ((t (,@fmt-bold ,@fg-base0))))
-             (helm-ff-file ((t (,@fmt-none ,@fg-base0))))
+             (helm-ff-file ((t (,@fg-base0))))
              (helm-ff-invalid-symlink ((t (,@fmt-undr ,@fg-red ,@bg-base02))))
              (helm-ff-prefix ((t (,@fmt-bold ,@fg-yellow))))
              (helm-ff-symlink ((t (,@fmt-bold ,@fg-blue ,@bg-base02))))
@@ -386,24 +386,24 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (org-cancelled-kwd-face ((t (,@fg-green ,@bg-base03))))
              (org-delegated-kwd-face ((t (,@fg-cyan ,@bg-base03))))
              ;; table
-             (table-cell ((t (,@fmt-none ,@fg-base0 ,@bg-back))))
+             (table-cell ((t (,@fg-base0 ,@bg-back))))
              ;; outline - pandocBlockQuoteLeader*
-             (outline-1 ((t (,@fmt-none ,@fg-blue))))
-             (outline-2 ((t (,@fmt-none ,@fg-cyan))))
-             (outline-3 ((t (,@fmt-none ,@fg-yellow))))
-             (outline-4 ((t (,@fmt-none ,@fg-red))))
-             (outline-5 ((t (,@fmt-none ,@fg-base0))))
-             (outline-6 ((t (,@fmt-none ,@fg-base01))))
-             (outline-7 ((t (,@fmt-none ,@fg-orange))))
-             (outline-8 ((t (,@fmt-none ,@fg-violet))))
+             (outline-1 ((t (,@fg-blue))))
+             (outline-2 ((t (,@fg-cyan))))
+             (outline-3 ((t (,@fg-yellow))))
+             (outline-4 ((t (,@fg-red))))
+             (outline-5 ((t (,@fg-base0))))
+             (outline-6 ((t (,@fg-base01))))
+             (outline-7 ((t (,@fg-orange))))
+             (outline-8 ((t (,@fg-violet))))
              ;; speedbar
-             (speedbar-button-face ((t (,@fmt-none ,@fg-base1))))
-             (speedbar-directory-face ((t (,@fmt-none ,@fg-orange))))
-             (speedbar-file-face ((t (,@fmt-none ,@fg-green))))
+             (speedbar-button-face ((t (,@fg-base1))))
+             (speedbar-directory-face ((t (,@fg-orange))))
+             (speedbar-file-face ((t (,@fg-green))))
              (speedbar-highlight-face ((t (,@bg-base02))))
              (speedbar-selected-face ((t (,@fmt-undr ,@fg-yellow))))
              (speedbar-separator-face ((t (,@fmt-stnd))))
-             (speedbar-tag-face ((t (,@fmt-none ,@fg-blue))))
+             (speedbar-tag-face ((t (,@fg-blue))))
              ;; show-paren - MatchParen
              (show-paren-match ((t (,@fmt-bold ,@fg-cyan ,@bg-base02))))
              (show-paren-mismatch ((t (,@fmt-bold ,@fg-red ,@bg-base01))))
@@ -446,17 +446,17 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
 	     (git-gutter:added ((t (,@fg-green))))
 	     (git-gutter:deleted ((t (,@fg-red))))
              ;; gnus - these are taken from mutt, not VIM
-             (gnus-cite-1 ((t (,@fmt-none ,@fg-blue)))) ; quoted
-             (gnus-cite-2 ((t (,@fmt-none ,@fg-cyan)))) ; quoted1
-             (gnus-cite-3 ((t (,@fmt-none ,@fg-yellow)))) ; quoted2
-             (gnus-cite-4 ((t (,@fmt-none ,@fg-red)))) ; quoted3
-             (gnus-cite-5 ((t (,@fmt-none ,@fg-orange)))) ; quoted4
-             (gnus-cite-6 ((t (,@fmt-none ,@fg-violet))))
-             (gnus-cite-7 ((t (,@fmt-none ,@fg-green))))
-             (gnus-cite-8 ((t (,@fmt-none ,@fg-magenta))))
-             (gnus-cite-9 ((t (,@fmt-none ,@fg-base00))))
-             (gnus-cite-10 ((t (,@fmt-none ,@fg-base01))))
-             (gnus-cite-11 ((t (,@fmt-none ,@fg-base02))))
+             (gnus-cite-1 ((t (,@fg-blue)))) ; quoted
+             (gnus-cite-2 ((t (,@fg-cyan)))) ; quoted1
+             (gnus-cite-3 ((t (,@fg-yellow)))) ; quoted2
+             (gnus-cite-4 ((t (,@fg-red)))) ; quoted3
+             (gnus-cite-5 ((t (,@fg-orange)))) ; quoted4
+             (gnus-cite-6 ((t (,@fg-violet))))
+             (gnus-cite-7 ((t (,@fg-green))))
+             (gnus-cite-8 ((t (,@fg-magenta))))
+             (gnus-cite-9 ((t (,@fg-base00))))
+             (gnus-cite-10 ((t (,@fg-base01))))
+             (gnus-cite-11 ((t (,@fg-base02))))
              (gnus-group-mail-1 ((t (,@fmt-bold ,@fg-base3))))
              (gnus-group-mail-1-empty ((t (,@fg-base3))))
              (gnus-group-mail-2 ((t (,@fmt-bold ,@fg-base2))))
@@ -472,23 +472,23 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (gnus-group-news-low ((t (,@fmt-bold ,@fg-violet))))
              (gnus-group-news-low-empty ((t (,@fg-violet))))
              (gnus-emphasis-highlight-words ; highlight
-              ((t (,@fmt-none ,fg-yellow))))
-             (gnus-header-content ((t (,@fmt-none ,@fg-base01)))) ; hdrdefault
-             (gnus-header-from ((t (,@fmt-none ,@fg-base00)))) ; header ^From
-             (gnus-header-name ((t (,@fmt-none ,@fg-base01)))) ; hdrdefault
+              ((t (,fg-yellow))))
+             (gnus-header-content ((t (,@fg-base01)))) ; hdrdefault
+             (gnus-header-from ((t (,@fg-base00)))) ; header ^From
+             (gnus-header-name ((t (,@fg-base01)))) ; hdrdefault
              (gnus-header-newsgroups ; hdrdefault
-              ((t (,@fmt-none ,@fg-base02))))
+              ((t (,@fg-base02))))
              (gnus-header-subject ; header ^Subject
-              ((t (,@fmt-none ,@fg-blue))))
+              ((t (,@fg-blue))))
              (gnus-server-agent ((t (,@fmt-bold ,@fg-base3))))
              (gnus-server-closed ((t (,@fmt-ital ,@fg-base1))))
              (gnus-server-denied ((t (,@fmt-bold ,@fg-base2))))
              (gnus-server-offline ((t (,@fmt-bold ,@fg-green))))
              (gnus-server-opened ((t (,@fmt-bold ,@fg-cyan))))
-             (gnus-signature ((t (,@fmt-none ,@fg-base01)))) ; signature
+             (gnus-signature ((t (,@fg-base01)))) ; signature
              (gnus-splash ((t (,@fg-base2))))
              (gnus-summary-cancelled ; deleted messages
-              ((t (,@fmt-none ,@fg-red))))
+              ((t (,@fg-red))))
              (gnus-summary-high-ancient
               ((t (,@fmt-bold :inherit gnus-summary-normal-ancient))))
              (gnus-summary-high-read
@@ -510,16 +510,16 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (gnus-summary-low-undownloaded
               ((t (,@fmt-ital :inherit gnus-summary-normal-ancient))))
              (gnus-summary-normal-ancient ; old messages
-              ((t (,@fmt-none ,@fg-blue))))
+              ((t (,@fg-blue))))
              (gnus-summary-normal-read ; read messages
-              ((t (,@fmt-none ,@fg-base01))))
+              ((t (,@fg-base01))))
              (gnus-summary-normal-ticked ; flagged
-              ((t (,@fmt-none ,@fg-red))))
-             (gnus-summary-normal-undownloaded ((t (,@fmt-none ,@fg-base2))))
+              ((t (,@fg-red))))
+             (gnus-summary-normal-undownloaded ((t (,@fg-base2))))
              (gnus-summary-normal-unread ; unread messages
-              ((t (,@fmt-none ,@fg-blue))))
+              ((t (,@fg-blue))))
              (gnus-summary-selected ; indicator
-              ((t (,@fmt-none ,@fg-base03 ,@bg-yellow))))
+              ((t (,@fg-base03 ,@bg-yellow))))
              ;; magit
              (magit-bisect-bad ((t ,@fg-red)))
              (magit-bisect-good ((t ,@fg-green)))
@@ -581,21 +581,21 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (sml/col-number ((t (,@fmt-bb ,@fg-base2))))
              (sml/discharging ((t (,@fg-magenta))))
              (sml/filename ((t (,@fmt-bold ,@fg-green))))
-             (sml/folder ((t (,@fmt-none ,@fg-blue))))
-             (sml/git ((t (,@fmt-none ,@fg-orange))))
+             (sml/folder ((t (,@fg-blue))))
+             (sml/git ((t (,@fg-orange))))
              (sml/global ((t (,@fg-base1))))
              (sml/line-number ((t (,@fmt-bb ,@fg-base3))))
-             (sml/minor-modes ((t (,@fmt-none ,@fg-base01))))
+             (sml/minor-modes ((t (,@fg-base01))))
              (sml/modes ((t (,@fmt-bb ,@fg-base3))))
              (sml/modified ((t (,@fg-red))))
-             (sml/numbers-separator ((t (,@fmt-none ,@fg-base01))))
+             (sml/numbers-separator ((t (,@fg-base01))))
              (sml/name-filling ((t (,@fg-cyan))))
              (sml/numbers-separator ((t (,@fg-base00))))
-             (sml/outside-modified ((t (,@fmt-none ,@fg-red))))
+             (sml/outside-modified ((t (,@fg-red))))
              (sml/position-percentage ((t (,@fmt-bb ,@fg-violet))))
-             (sml/prefix ((t (,@fmt-none ,@fg-cyan))))
+             (sml/prefix ((t (,@fg-cyan))))
              (sml/process ((t (,@fg-cyan))))
-             (sml/read-only ((t (,@fmt-none ,@fg-yellow))))
+             (sml/read-only ((t (,@fg-yellow))))
              (sml/sudo ((t (,@fmt-bold ,@fg-red))))
              (sml/time ((t (,@fmt-bold ,@fg-base3))))
              (sml/vc ((t (,@fg-green))))
@@ -623,8 +623,8 @@ the \"Gen RGB\" column in noctilux-definitions.el to improve them further."
              (erc-input-face ((t (:foreground ,base01))))
              (erc-keyword-face ((t (,@fmt-bldi ,@fg-yellow))))
              (erc-my-nick-face ((t (:foreground ,blue))))
-             (erc-nick-defaunoctilux-face ((t (,@fmt-none ,@fg-cyan))))
-             (erc-notice-face ((t (,@fmt-none ,@fg-blue))))
+             (erc-nick-defaunoctilux-face ((t (,@fg-cyan))))
+             (erc-notice-face ((t (,@fg-blue))))
              (erc-timestamp-face ((t (:foreground ,base01))))
              ;; evil
              (evil-ex-lazy-highlight ((t :inherit lazy-highlight)))
